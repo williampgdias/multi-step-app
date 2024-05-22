@@ -143,8 +143,8 @@ body {
     font-size: 17px;
     position: relative;
     display: inline-block;
-    width: 3.5em;
-    height: 2em;
+    width: 3em;
+    height: 1.5em;
 }
 
 /* Hide default HTML checkbox */
@@ -171,8 +171,8 @@ body {
 .slider:before {
     position: absolute;
     content: '';
-    height: 1.4em;
-    width: 1.4em;
+    height: 1em;
+    width: 1em;
     border-radius: 20px;
     left: 0.27em;
     bottom: 0.25em;
@@ -191,7 +191,7 @@ input:checked + .slider:before {
 
 /* Content */
 .content {
-    padding: 60px 100px 15px 100px;
+    padding: 60px 100px 0 100px;
 }
 
 .checkbox-container {
@@ -281,6 +281,11 @@ input:checked + .slider:before {
     width: 150px;
 }
 
+.select-plan:hover {
+    border: 1px solid var(--marine-blue);
+    cursor: pointer;
+}
+
 .select-plan.active {
     border: 1px solid var(--marine-blue);
     background-color: var(--magnolia);
@@ -288,6 +293,35 @@ input:checked + .slider:before {
 
 .select-plan img {
     padding-bottom: 40px;
+    width: 50px;
+}
+
+/* Change Subscription */
+.change-subscription {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    background-color: var(--magnolia);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.change-subscription p {
+    color: var(--marine-blue);
+    font-weight: var(--fw-500);
+}
+
+.back-link {
+    cursor: pointer;
+}
+
+.change-steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 80px;
 }
 
 /* Footer */
