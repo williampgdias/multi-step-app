@@ -1,11 +1,20 @@
 $(document).ready(function () {
     $('.phoneNumberInput').mask('(00) 00000-0000');
 
+    // Button for the first step
     $('.first-step-button').click(function (e) {
         e.preventDefault();
+
         if (handleFormSubmission()) {
             handleChangeSteps('#first-step', '#second-step');
+            $('#steps-number-1').removeClass('active');
+            $('#steps-number-2').addClass('active');
         }
+    });
+
+    // Button to select plan for the second step
+    $('.select-plan').click(function () {
+        handlePlanSelection('.select-plan', this);
     });
 });
 
@@ -61,6 +70,11 @@ function handleErrorText(input, errorClassName, inputClassName) {
         $(inputClassName).css('borderColor', '');
         return false;
     }
+}
+
+function handlePlanSelection(className, clickedElement) {
+    $(className).removeClass('active');
+    $(clickedElement).addClass('active');
 }
 
 function isValidEmail(email) {

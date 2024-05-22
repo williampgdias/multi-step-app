@@ -41,7 +41,7 @@ body {
 }
 
 /* Steps */
-#second-step,
+#first-step,
 #third-step,
 #fourth-step,
 #fifth-step {
@@ -233,7 +233,7 @@ input:checked + .slider:before {
 }
 
 /* First step */
-#first-step p {
+.description {
     margin-bottom: 40px;
     font-size: 1.2rem;
     color: var(--cool-gray);
@@ -266,6 +266,28 @@ input:checked + .slider:before {
     font-size: 1rem;
     color: var(--cool-gray);
     font-weight: var(--fw-400);
+}
+
+/* Second-step */
+.subscription-container {
+    display: flex;
+    gap: 20px;
+}
+
+.select-plan {
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 20px;
+    width: 150px;
+}
+
+.select-plan.active {
+    border: 1px solid var(--marine-blue);
+    background-color: var(--magnolia);
+}
+
+.select-plan img {
+    padding-bottom: 40px;
 }
 
 /* Footer */

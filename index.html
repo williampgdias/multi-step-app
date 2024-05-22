@@ -74,7 +74,7 @@
 
                 <h1 class="title">Personal info</h1>
 
-                <p>Please provide your name, email address, and phone number.</p>
+                <p class="description">Please provide your name, email address, and phone number.</p>
 
                 <form class="first-step-form">
                     <div>
@@ -106,23 +106,37 @@
             <!-- Step 2 start -->
             <div id="second-step">
                 <h2 class="title">Select your plan</h2>
-                <p>You have the option of monthly or yearly billing.</p>
+                <p class="description">You have the option of monthly or yearly billing.</p>
 
-                <div class="select-plan">
-                    <img src="./assets/images/icon-arcade.svg">
-                    Arcade
-                    $9/mo
+                <div class="subscription-container">
+                    <!-- Arcade box -->
+                    <div class="select-plan" id="arcade">
+                        <img src="./assets/images/icon-arcade.svg">
+                        <div>
+                            <p class="subscription-type">Arcade</p>
+                            <p class="subscription-price">$9/mo</p>
+                        </div>
+                    </div>
+
+                    <!-- Advanced box -->
+                    <div class="select-plan" id="advanced">
+                        <img src="./assets/images/icon-advanced.svg">
+                        <div>
+                            <p class="subscription-type">Advanced</p>
+                            <p class="subscription-price">$12/mo</p>
+                        </div>
+                    </div>
+
+                    <!-- Pro box -->
+                    <div class="select-plan" id="pro">
+                        <img src="./assets/images/icon-pro.svg">
+                        <div>
+                            <p class="subscription-type">Pro</p>
+                            <p class="subscription-price">$15/mo</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="select-plan">
-                    <img src="./assets/images/icon-advanced.svg">
-                    Advanced
-                    $12/mo
-                </div>
-                <div class="select-plan">
-                    <img src="./assets/images/icon-pro.svg">
-                    Pro
-                    $15/mo
-                </div>
+
                 <div>
                     <p>Monthly</p>
                     <label class="switch">
@@ -142,7 +156,7 @@
             <!-- Step 3 start -->
             <div id="third-step">
                 <h2 class="title">Pick add-ons</h2>
-                <p>Add-ons help enhance your gaming experience.</p>
+                <p class="description">Add-ons help enhance your gaming experience.</p>
 
                 <form>
                     <div class="checkbox-container">
@@ -200,7 +214,7 @@
             <!-- Step 4 start -->
             <div id="forth-step">
                 <h2 class="title">Finishing up</h2>
-                <p>Double-check everything looks OK before confirming.</p>
+                <p class="description">Double-check everything looks OK before confirming.</p>
 
                 <!-- Dynamically add subscription and add-on selections here -->
 
