@@ -64,6 +64,20 @@ body {
     border-radius: 8px;
     font-family: 'Ubuntu', sans-serif;
     margin-top: 50px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+.btn:hover {
+    background-color: var(--purplish-blue);
+}
+
+.first-step-form span {
+    position: absolute;
+    right: 0;
+    color: var(--strawberry-red);
+    font-weight: var(--fw-700);
+    display: none;
 }
 
 /* Container */
@@ -225,6 +239,7 @@ input:checked + .slider:before {
 
 .first-step-form div {
     margin-bottom: 20px;
+    position: relative;
 }
 
 .first-step-form label {
@@ -237,11 +252,18 @@ input:checked + .slider:before {
     padding: 15px;
     margin-top: 5px;
     border: 1px solid var(--light-gray);
+    cursor: pointer;
+    color: var(--marine-blue);
+    font-weight: var(--fw-500);
+    font-size: 1.1rem;
+    font-family: 'Ubuntu', sans-serif;
+    outline: none;
 }
 
 .first-step-form input::placeholder {
     font-size: 1rem;
     color: var(--cool-gray);
+    font-weight: var(--fw-400);
 }
 
 /* Footer */

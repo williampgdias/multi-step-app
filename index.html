@@ -12,6 +12,13 @@
 
     <title>Frontend Mentor | Page 1</title>
 
+    <!-- jQuery link -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- jQuery Mask link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
 </head>
 
 <body>
@@ -71,20 +78,25 @@
 
                 <form class="first-step-form">
                     <div>
+                        <span class="errorTextName">This field is required</span>
                         <label for="name">Name</label>
-                        <input type="text" placeholder="e.g. Stephen King" name="name" id="name">
+                        <input type="text" placeholder="e.g. Stephen King" name="name" id="name" class="nameInput">
                     </div>
                     <div>
+                        <span class="errorTextEmail">This field is required</span>
                         <label for="email">Email Address</label>
-                        <input type="email" placeholder="e.g. stephenking@lorem.com" name="email" id="email">
+                        <input type="email" placeholder="e.g. stephenking@lorem.com" name="email" id="email"
+                            class="emailInput">
                     </div>
                     <div>
+                        <span class="errorTextPhone">This field is required</span>
                         <label for="number">Phone Number</label>
-                        <input type="number" placeholder="e.g. (21) 12345-6789" name="number" id="number">
+                        <input type="text" placeholder="e.g. (21) 12345-6789" name="number" id="number"
+                            class="phoneNumberInput">
                     </div>
 
 
-                    <button class="btn">Next Step</button>
+                    <button class="btn first-step-button">Next Step</button>
 
                 </form>
 
@@ -218,9 +230,7 @@
     </div>
     <!-- Step 5 end -->
 
-    <!-- jQuery link -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
 
     <!-- JS File -->
     <script src="./assets/js/index.js"></script>
