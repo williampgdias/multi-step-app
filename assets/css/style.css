@@ -72,6 +72,7 @@ body {
     border-radius: 8px;
     display: flex;
     background-color: var(--white);
+    margin: 0 20px;
 }
 
 /* Steps */
@@ -267,6 +268,12 @@ input:checked + .slider:before {
     .steps div p:nth-child(2) {
         font-size: 0.85rem;
     }
+
+    /* Content */
+    .content {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -274,18 +281,20 @@ input:checked + .slider:before {
         display: block;
     }
     .container {
-        display: block;
+        display: inline;
         padding: 0;
+        margin: 0;
     }
     .sidebar {
         background: url('../images/bg-sidebar-mobile.svg') no-repeat;
         background-size: 100%;
         width: 100%;
-        height: 250px;
         display: flex;
         justify-content: center;
         align-items: flex-start;
         gap: 20px;
+        position: fixed;
+        z-index: 1;
     }
     .steps:not(:last-child) {
         margin-bottom: 0;
@@ -297,5 +306,45 @@ input:checked + .slider:before {
         width: 40px;
         height: 40px;
         font-size: 1rem;
+    }
+
+    /* Content */
+    .content {
+        z-index: 2;
+        position: relative;
+        top: 100px;
+        width: 90%;
+        background-color: var(--white);
+        margin: 0 auto;
+        border-radius: 8px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #steps-number {
+        font-size: 0.9rem;
+        width: 35px;
+        height: 35px;
+    }
+    .title {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    #first-step p {
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+    }
+    .first-step-form label {
+        font-size: 0.9rem;
+    }
+    .first-step-form input {
+        padding: 10px;
+    }
+    .first-step-form input::placeholder {
+        font-size: 0.9rem;
+    }
+    .btn {
+        padding: 10px 15px;
+        margin-top: 40px;
     }
 }
