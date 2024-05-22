@@ -3,10 +3,9 @@ $(document).ready(function () {
 
     $('.first-step-button').click(function (e) {
         e.preventDefault();
-        handleFormSubmission();
-
-        $('#first-step').css('display', 'none');
-        $('#second-step').css('display', 'block');
+        if (handleFormSubmission()) {
+            handleChangeSteps('#first-step', '#second-step');
+        }
     });
 });
 
@@ -15,27 +14,56 @@ function handleFormSubmission() {
     const emailInput = $('.emailInput').val();
     const phoneNumberInput = $('.phoneNumberInput').val();
 
-    if (nameInput == '') {
-        $('.errorTextName').css('display', 'block');
-        $('.nameInput').css('borderColor', 'hsl(354, 84%, 57%)');
-    } else {
-        $('.errorTextName').css('display', 'none');
-        $('.nameInput').css('borderColor', '');
+    let isValid = true;
+
+    if (handleErrorText(nameInput, '.errorTextName', '.nameInput')) {
+        isValid = false;
     }
 
-    if (emailInput == '') {
+    if (handleErrorText(emailInput, '.errorTextEmail', '.emailInput')) {
+        isValid = false;
+    } else if (!isValidEmail(emailInput)) {
+        $('.errorTextEmail').text('Please, enter a valid email address.');
         $('.errorTextEmail').css('display', 'block');
         $('.emailInput').css('borderColor', 'hsl(354, 84%, 57%)');
-    } else {
-        $('.errorTextEmail').css('display', 'none');
-        $('.emailInput').css('borderColor', '');
+        isValid = false;
     }
 
-    if (phoneNumberInput == '') {
-        $('.errorTextPhone').css('display', 'block');
-        $('.phoneNumberInput').css('borderColor', 'hsl(354, 84%, 57%)');
-    } else {
-        $('.errorTextPhone').css('display', 'none');
-        $('.phoneNumberInput').css('borderColor', '');
+    if (
+        handleErrorText(
+            phoneNumberInput,
+            '.errorTextPhone',
+            '.phoneNumberInput'
+        )
+    ) {
+        isValid = false;
     }
+
+    return isValid;
+}
+
+function handleChangeSteps(currentStep, nextStep) {
+    $(currentStep).css('display', 'none');
+    $(nextStep).css('display', 'block');
+}
+
+function handleErrorText(input, errorClassName, inputClassName) {
+    const borderColor = 'hsl(354, 84%, 57%)';
+
+    if (input == '') {
+        $(errorClassName).text('This field is required');
+        $(errorClassName).css('display', 'block');
+        $(inputClassName).css('borderColor', borderColor);
+        return true;
+    } else {
+        $(errorClassName).css('display', 'none');
+        $(errorClassName).text('');
+        $(inputClassName).css('borderColor', '');
+        return false;
+    }
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
 }

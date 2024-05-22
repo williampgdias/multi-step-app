@@ -55,15 +55,17 @@ body {
     margin-bottom: 20px;
 }
 
+.first-step-button {
+    float: right;
+}
+
 .btn {
     background-color: var(--marine-blue);
     color: var(--white);
     border: none;
     padding: 15px 20px;
-    float: right;
     border-radius: 8px;
     font-family: 'Ubuntu', sans-serif;
-    margin-top: 50px;
     cursor: pointer;
     transition: background-color 0.4s;
 }
@@ -120,13 +122,13 @@ body {
     font-weight: var(--fw-700);
 }
 
-#steps-number.active {
+.steps-number.active {
     border: 1px solid var(--light-blue);
     background-color: var(--light-blue);
     color: var(--marine-blue);
 }
 
-#steps-number {
+.steps-number {
     border-radius: 50%;
     width: 30px;
     height: 30px;
