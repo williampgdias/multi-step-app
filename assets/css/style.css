@@ -93,10 +93,13 @@ body {
 
 /* Steps */
 .sidebar {
-    background: url('../images/bg-sidebar-desktop.svg') no-repeat;
-    width: 300px;
+    background: url(../images/bg-sidebar-desktop.svg) no-repeat center center;
+    background-size: cover;
+    width: 274px;
     height: 568px;
-    padding: 30px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 0;
     color: var(--white);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -144,7 +147,7 @@ body {
     position: relative;
     display: inline-block;
     width: 3em;
-    height: 1.5em;
+    height: 1.6em;
 }
 
 /* Hide default HTML checkbox */
@@ -335,6 +338,11 @@ input:checked + .slider:before {
 }
 
 /* Responsive */
+@media screen and (max-width: 1100px) {
+    .select-plan {
+        width: 120px;
+    }
+}
 @media screen and (max-width: 950px) {
     #steps-number {
         width: 25px;
@@ -353,6 +361,40 @@ input:checked + .slider:before {
     .content {
         padding-left: 30px;
         padding-right: 30px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    #second-step .title {
+        font-size: 2.7rem;
+    }
+    #second-step .description {
+        font-size: 1rem;
+    }
+    .change-steps {
+        margin-top: 40px;
+    }
+    .content {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 0;
+    }
+    .subscription-container {
+        display: block;
+    }
+    .select-plan {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+    }
+    .select-plan:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .select-plan img {
+        width: 40px;
+        padding-bottom: 0;
+        margin-right: 20px;
     }
 }
 
@@ -387,6 +429,10 @@ input:checked + .slider:before {
         height: 40px;
         font-size: 1rem;
     }
+    .change-steps {
+        margin-top: 20px;
+        padding-bottom: 20px;
+    }
 
     /* Content */
     .content {
@@ -397,6 +443,7 @@ input:checked + .slider:before {
         background-color: var(--white);
         margin: 0 auto;
         border-radius: 8px;
+        padding-top: 20px;
     }
 }
 
