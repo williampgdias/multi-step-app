@@ -114,7 +114,8 @@
                         <img src="./assets/images/icon-arcade.svg">
                         <div>
                             <p class="subscription-type">Arcade</p>
-                            <p class="subscription-price">$9/mo</p>
+                            <p class="subscription-price"><span class="arcadeYear">$9/mo</span></p>
+                            <span class="freeMonths">2 months free</span>
                         </div>
                     </div>
 
@@ -123,7 +124,8 @@
                         <img src="./assets/images/icon-advanced.svg">
                         <div>
                             <p class="subscription-type">Advanced</p>
-                            <p class="subscription-price">$12/mo</p>
+                            <p class="subscription-price"><span class="advancedYear">$12/mo</span></p>
+                            <span class="freeMonths">2 months free</span>
                         </div>
                     </div>
 
@@ -132,15 +134,16 @@
                         <img src="./assets/images/icon-pro.svg">
                         <div>
                             <p class="subscription-type">Pro</p>
-                            <p class="subscription-price">$15/mo</p>
+                            <p class="subscription-price"><span class="proYear">$15/mo</span></p>
+                            <span class="freeMonths">2 months free</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="change-subscription">
-                    <p id="montly">Monthly</p>
+                    <p id="monthly">Monthly</p>
                     <label class="switch">
-                        <input type="checkbox">
+                        <input type="checkbox" id="toggle">
                         <span class="slider"></span>
                     </label>
                     <p id="yearly">Yearly</p>
@@ -224,7 +227,7 @@
                 </div>
 
                 <div>
-                    <p>Go Back</p>
+                    <p class="back-link">Go Back</p>
                     <button class="btn">Confirm</button>
                 </div>
             </div>

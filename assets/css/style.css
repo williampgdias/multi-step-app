@@ -41,7 +41,7 @@ body {
 }
 
 /* Steps */
-#first-step,
+#second-step,
 #third-step,
 #fourth-step,
 #fifth-step {
@@ -284,6 +284,24 @@ input:checked + .slider:before {
     width: 150px;
 }
 
+.subscription-type {
+    color: var(--marine-blue);
+    font-weight: var(--fw-500);
+}
+
+.subscription-price {
+    color: var(--cool-gray);
+    font-size: 0.8rem;
+    padding-top: 3px;
+    padding-bottom: 5px;
+}
+
+.freeMonths {
+    font-size: 0.75rem;
+    color: var(--marine-blue);
+    display: none;
+}
+
 .select-plan:hover {
     border: 1px solid var(--marine-blue);
     cursor: pointer;
@@ -312,8 +330,12 @@ input:checked + .slider:before {
 }
 
 .change-subscription p {
-    color: var(--marine-blue);
+    color: var(--cool-gray);
     font-weight: var(--fw-500);
+}
+
+#monthly {
+    color: var(--marine-blue);
 }
 
 .back-link {
@@ -324,17 +346,7 @@ input:checked + .slider:before {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 80px;
-}
-
-/* Footer */
-.attribution {
-    font-size: 11px;
-    text-align: center;
-}
-
-.attribution a {
-    color: hsl(228, 45%, 44%);
+    margin-top: 50px;
 }
 
 /* Responsive */
@@ -343,6 +355,7 @@ input:checked + .slider:before {
         width: 120px;
     }
 }
+
 @media screen and (max-width: 950px) {
     #steps-number {
         width: 25px;

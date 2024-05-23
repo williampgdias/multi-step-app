@@ -1,22 +1,49 @@
 $(document).ready(function () {
     $('.phoneNumberInput').mask('(00) 00000-0000');
 
-    // Button for the first step
+    // Button to the second step
     $('.first-step-button').click(function (e) {
         e.preventDefault();
 
         if (handleFormSubmission()) {
             handleChangeSteps('#first-step', '#second-step');
-            $('#steps-number-1').removeClass('active');
-            $('#steps-number-2').addClass('active');
+            highlightCurrentStep('#steps-number-1', '#steps-number-2');
         }
+    });
+
+    // Button to the third step
+    $('#second-step .btn').click(function () {
+        highlightCurrentStep('#steps-number-2', '#steps-number-3');
     });
 
     // Button to select plan for the second step
     $('.select-plan').click(function () {
         handlePlanSelection('.select-plan', this);
     });
+
+    // Button to change between Monthly and Yearly
+    $('#toggle').click(function () {
+        toggleCheckbox(
+            '#monthly',
+            '#yearly',
+            'var(--marine-blue)',
+            'var(--cool-gray)'
+        );
+    });
+
+    // Execute a function on page load to set initial state based on checkbox
+    toggleCheckbox(
+        '#monthly',
+        '#yearly',
+        'var(--marine-blue)',
+        'var(--cool-gray)'
+    );
 });
+
+function highlightCurrentStep(currentStep, nextStep) {
+    $(currentStep).removeClass('active');
+    $(nextStep).addClass('active');
+}
 
 function handleFormSubmission() {
     const nameInput = $('.nameInput').val();
@@ -80,4 +107,28 @@ function handlePlanSelection(className, clickedElement) {
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
+}
+
+function toggleCheckbox(month, year, firstColor, secondColor) {
+    if ($('#toggle').is(':checked')) {
+        $(year).css('color', firstColor);
+        $(month).css('color', secondColor);
+
+        // Change the prices between month and year dynamically
+        $('.arcadeYear').text('$90/yr');
+        $('.advancedYear').text('$120/yr');
+        $('.proYear').text('$150/yr');
+
+        $('.freeMonths').css('display', 'block');
+    } else {
+        $(year).css('color', secondColor);
+        $(month).css('color', firstColor);
+
+        // Change the prices between month and year dynamically
+        $('.arcadeYear').text('$9/mo');
+        $('.advancedYear').text('$12/mo');
+        $('.proYear').text('$15/mo');
+
+        $('.freeMonths').css('display', 'none');
+    }
 }
